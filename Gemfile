@@ -8,6 +8,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 6.0.0'
+gem 'sidekiq'
+gem 'nokogiri'
 
 group :development, :test do
   gem 'pry-byebug'

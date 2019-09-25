@@ -24,4 +24,13 @@ module Utility
   def top_100
     Link.all
   end
+
+  def increment_link_view
+    @link.increment(:views, 1)
+    @link.save
+  end
+
+  def link_title_scraper(link)
+    LinkScraperWorker.perform_async(link.id)
+  end
 end
