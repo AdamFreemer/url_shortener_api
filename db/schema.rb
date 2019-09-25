@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_09_22_205618) do
     t.string "url"
     t.string "slug"
     t.text "title"
-    t.decimal "views"
+    t.integer "views"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["slug"], name: "index_links_on_slug", unique: true

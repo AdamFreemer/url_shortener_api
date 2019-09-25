@@ -4,7 +4,7 @@ class CreateLinks < ActiveRecord::Migration[6.0]
       t.string :url
       t.string :slug
       t.text :title
-      t.decimal :views
+      t.integer :views
 
       t.timestamps
       t.index :url, unique: true

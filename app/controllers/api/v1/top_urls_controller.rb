@@ -1,14 +1,9 @@
 module Api::V1
   class TopUrlsController < ApplicationController
+    include Utility
+    
     def index
-      binding.pry
-      # render json: top_100
-    end
-
-    private
-
-    def top_100
-      # Return top 100 viewed urls
+      json_response(top_100)
     end
   end
 end
