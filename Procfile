@@ -1,3 +1,2 @@
-web: bundle exec rails s
-release: bin/rake db:migrate
+web: bin/rails server -p $PORT -e $RAILS_ENV
 linkscrapeworker: bundle exec sidekiq -c 2
