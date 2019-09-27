@@ -1,5 +1,5 @@
-class LinkSerializer < ActiveModel::Serializer
-  attributes :url, :short_url, :title, :views
+class CreateLinkSerializer < ActiveModel::Serializer
+  attributes :url, :short_url
 end
 
 def short_url

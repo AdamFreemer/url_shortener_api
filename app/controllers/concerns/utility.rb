@@ -5,6 +5,10 @@ module Utility
     render json: object, status: status
   end
 
+  def create_json_response(object)
+    render json: object, status: 200, serializer: CreateLinkSerializer
+  end
+
   def new_link
     @link = Link.new
   end

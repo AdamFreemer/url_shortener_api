@@ -14,7 +14,7 @@ module Api::V1
         @link.assign_attributes(url: params[:url], slug: Link.generate_slug)
         if @link.save
           link_title_scraper(@link)
-          json_response(@link) 
+          create_json_response(@link) 
         end
       rescue ActiveRecord::RecordNotUnique => e
         if e.message.include? link_index_slug
