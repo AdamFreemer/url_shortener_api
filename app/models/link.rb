@@ -11,19 +11,19 @@ class Link < ApplicationRecord
   def self.slug_characters(slug_digits)
     alphanumcase = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
     unreserved = ['-', '_', '.', '~']
-    # nreserved = the balance of the RFC 3986 unreserved character set
+    # ureserved = the balance of the RFC 3986 unreserved character set
     characters = [alphanumcase, unreserved].map(&:to_a).flatten
     (0...slug_digits).map { characters[rand(characters.length)] }.join
   end
 
   def self.index_slug
-    return unless ActiveRecord::Base.connection.indexes(:links).first.name.include?("slug")
+    return unless ActiveRecord::Base.connection.indexes(:links).first.name.include?('slug')
     
     ActiveRecord::Base.connection.indexes(:links).first.name  
   end
 
   def self.index_url
-    return unless ActiveRecord::Base.connection.indexes(:links).second.name.include?("url")
+    return unless ActiveRecord::Base.connection.indexes(:links).second.name.include?('url')
     
     ActiveRecord::Base.connection.indexes(:links).second.name  
   end
