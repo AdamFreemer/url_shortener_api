@@ -12,14 +12,16 @@ gem 'sidekiq'
 gem 'nokogiri'
 
 group :development, :test do
+  gem 'rspec-rails'
   gem 'pry-byebug'
   gem 'pry-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'shoulda-matchers'
+  gem 'simplecov', require: false, group: :test
+  gem 'simplecov-rcov', require: false
 end
 
 group :development do
