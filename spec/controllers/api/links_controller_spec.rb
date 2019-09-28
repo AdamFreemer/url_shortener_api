@@ -6,6 +6,7 @@ RSpec.describe Api::V1::LinksController, type: :controller do
 
     it 'returns the expected record' do
       get :show, params: { id: link.slug }
+      
       expect(JSON.parse(response.body)['url']).to eq(Link.first.url)
     end
   end
@@ -17,6 +18,7 @@ RSpec.describe Api::V1::LinksController, type: :controller do
 
     it 'creates a new link and confirms attributes match posted data' do
       post :create, params: params
+
       expect(Link.first.url).to eq('https://www.atari.com')
     end    
 

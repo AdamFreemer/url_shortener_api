@@ -14,6 +14,6 @@ RSpec.describe Link, type: :model do
 
     it 'returns index_links_on_url for .index_links_on_slug' do
       expect(Link.index_url).to eq('index_links_on_url')
-     end
+    end
   end
 end
