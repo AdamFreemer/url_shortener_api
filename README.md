@@ -85,17 +85,16 @@ The code that governs the short link slug creation is located in the Link model:
     
   ```
   def self.generate_slug
-    # The conditional is to account for the flaw in the log statement 
-    # below a count of 2 in the database
     digits = Link.count > 1 ? Math.log(Link.count, 66).ceil : 1
+    
     self.slug_characters(digits)
   end
   
   def self.slug_characters(slug_digits)
     alphanumcase = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
     unreserved = ['-', '_', '.', '~']
-    # nreserved = the balance of the RFC 3986 unreserved character set
     characters = [alphanumcase, unreserved].map(&:to_a).flatten
+
     (0...slug_digits).map { characters[rand(characters.length)] }.join
   end
   ```
