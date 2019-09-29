@@ -5,17 +5,17 @@ ruby '2.6.3'
 
 gem 'active_model_serializers'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'nokogiri'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'rails', '~> 6.0.0'
 gem 'sidekiq'
-gem 'nokogiri'
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'rspec-rails'
 end
 
 group :test do
@@ -25,7 +25,6 @@ group :test do
 end
 
 group :development do
-  # My preferred dev env gems
   gem 'awesome_print'
   gem 'brakeman'
   gem 'listen', '>= 3.0.5', '< 3.2'

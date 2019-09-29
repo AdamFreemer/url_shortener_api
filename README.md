@@ -47,6 +47,8 @@ This readme is the basic requirements and setup guide to run this application in
 
 #### Using the API
 
+* Note: you can substitute `https://micro-url-api.herokuapp.com` in place of `localhost:3001` in the instructions below, to test against the active Heroku demo app of this repo. 
+
 1. To create a short url link:
     
     * In your client, create a POST to: `localhost:3001/api/v1/links`
@@ -101,7 +103,7 @@ The code that governs the short link slug creation is located in the Link model:
 
   The `generate_slug` class method uses a logarithmic calculation of the number of links in the database, to determine how many digits are required for the shortest slug (based off of our base 66 character set).
 
-  The `slug_characters` class method takes the slug generated, and creates a random string (slug) with the number of characters specified in the `generate_slug` method.
+  The `slug_characters` class method takes the slug generated, and creates a randomized string (slug) with the number of characters specified in the `generate_slug` method.
 
-  This mechanism is then leveraged in the Links controller, by a Rails 6 DHH inspired (https://sikac.hu/use-create-or-find-by-to-avoid-race-condition-in-rails-6-0-f44fca97d16b) create_or_find_by style approach. This approach utilizes uniqueness indexes created on the Links table, to perform a select and create all in 1 database request. Of the several current techniques in eliminating race conditions encountered during uniqueness validations, with their benefits and draw backs, given the scope of this project, I thought it was a reasonable solution.
+  This mechanism is then leveraged in the Links controller, by a Rails 6 DHH inspired (https://sikac.hu/use-create-or-find-by-to-avoid-race-condition-in-rails-6-0-f44fca97d16b) create_or_find_by style approach. This approach utilizes uniqueness indexes created on the Links table, to perform a select and create all in 1 database request. Of the several current techniques in eliminating race conditions encountered during uniqueness validations, with their benefits and draw backs, given the scope of this project, I thought this was a reasonable solution.
 

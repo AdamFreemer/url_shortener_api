@@ -2,8 +2,8 @@ class Link < ApplicationRecord
   default_scope { order(views: :desc).limit(100) }
 
   def self.generate_slug
-    # The conditional is to account for the flaw in the log statement 
-    # below a count of 2 in the database
+    # The conditional below is to account for the flaw in the log statement, 
+    # when the link count is below 2 in the database.
     digits = Link.count > 1 ? Math.log(Link.count, 66).ceil : 1
     self.slug_characters(digits)
   end
@@ -11,7 +11,7 @@ class Link < ApplicationRecord
   def self.slug_characters(slug_digits)
     alphanumcase = [('a'..'z'), ('A'..'Z'), ('0'..'9')].map(&:to_a).flatten
     unreserved = ['-', '_', '.', '~']
-    # ureserved = the balance of the RFC 3986 unreserved character set
+    # unreserved = the balance of the RFC 3986 unreserved character set
     characters = [alphanumcase, unreserved].map(&:to_a).flatten
     (0...slug_digits).map { characters[rand(characters.length)] }.join
   end

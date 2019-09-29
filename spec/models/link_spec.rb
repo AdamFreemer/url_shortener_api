@@ -9,7 +9,7 @@ RSpec.describe Link, type: :model do
 
   describe 'index name class methods confirming table indexes' do
     it 'returns index_links_on_slug for .index_links_on_slug' do
-     expect(Link.index_slug).to eq('index_links_on_slug')
+      expect(Link.index_slug).to eq('index_links_on_slug')
     end
 
     it 'returns index_links_on_url for .index_links_on_slug' do

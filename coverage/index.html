@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-09-28T19:33:44-04:00">2019-09-28T19:33:44-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-09-29T13:37:58-04:00">2019-09-29T13:37:58-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -263,7 +263,7 @@
       <tr>
         <td class="strong"><a href="#d39c1c34d60036c17865ce2d071456a08267cea3" class="src_link" title="spec/controllers/api/links_controller_spec.rb">spec/controllers/api/links_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>30</td>
+        <td>32</td>
         <td>17</td>
         <td>17</td>
         <td>0</td>
@@ -996,13 +996,13 @@
         <li class="never" data-hits="" data-linenumber="5">
           
           
-          <code class="ruby">    # The conditional is to account for the flaw in the log statement </code>
+          <code class="ruby">    # The conditional below is to account for the flaw in the log statement, </code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
           
           
-          <code class="ruby">    # below a count of 2 in the database</code>
+          <code class="ruby">    # when the link count is below 2 in the database.</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="7">
@@ -1050,7 +1050,7 @@
         <li class="never" data-hits="" data-linenumber="14">
           
           
-          <code class="ruby">    # ureserved = the balance of the RFC 3986 unreserved character set</code>
+          <code class="ruby">    # unreserved = the balance of the RFC 3986 unreserved character set</code>
         </li>
       
         <li class="covered" data-hits="4" data-linenumber="15">
@@ -2779,133 +2779,145 @@
           <code class="ruby">      get :show, params: { id: link.slug }</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby">      </code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
           <code class="ruby">      expect(JSON.parse(response.body)[&#39;url&#39;]).to eq(Link.first.url)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
-          
-          
-          <code class="ruby">    end</code>
-        </li>
-      
         <li class="never" data-hits="" data-linenumber="11">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="13">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="13">
           
-          <code class="ruby">  describe &#39;POST #create&#39; do</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
+          <code class="ruby">  describe &#39;POST #create&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
           <code class="ruby">    let(:params) do </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="15">
+        <li class="covered" data-hits="2" data-linenumber="16">
           <span class="hits">2</span>
           
           <code class="ruby">      { &#39;url&#39;: &#39;https://www.atari.com&#39; }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    it &#39;creates a new link and confirms attributes match posted data&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="19">
           <span class="hits">1</span>
           
-          <code class="ruby">      post :create, params: params</code>
+          <code class="ruby">    it &#39;creates a new link and confirms attributes match posted data&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(Link.first.url).to eq(&#39;https://www.atari.com&#39;)</code>
+          <code class="ruby">      post :create, params: params</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="21">
           
           
-          <code class="ruby">    end    </code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="22">
-          
-          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="23">
+        <li class="covered" data-hits="1" data-linenumber="22">
           <span class="hits">1</span>
           
-          <code class="ruby">    it &#39;responds appropriately with duplicate link data submission&#39; do</code>
+          <code class="ruby">      expect(Link.first.url).to eq(&#39;https://www.atari.com&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="24">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="23">
           
-          <code class="ruby">      post :create, params: params</code>
+          
+          <code class="ruby">    end    </code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="25">
           <span class="hits">1</span>
           
-          <code class="ruby">      post :create, params: params</code>
+          <code class="ruby">    it &#39;responds appropriately with duplicate link data submission&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="26">
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      post :create, params: params</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="27">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(JSON.parse(response.body)[&#39;message&#39;]).to eq(&#39;This url already exists in the database&#39;)</code>
+          <code class="ruby">      post :create, params: params</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="28">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(JSON.parse(response.body)[&#39;message&#39;]).to eq(&#39;This url already exists in the database&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="31">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="32">
           
           
           <code class="ruby">end</code>
@@ -3132,7 +3144,7 @@
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">     expect(Link.index_slug).to eq(&#39;index_links_on_slug&#39;)</code>
+          <code class="ruby">      expect(Link.index_slug).to eq(&#39;index_links_on_slug&#39;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -3162,7 +3174,7 @@
         <li class="never" data-hits="" data-linenumber="17">
           
           
-          <code class="ruby">     end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="18">
