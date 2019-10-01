@@ -8,6 +8,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'nokogiri'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
+gem 'rack-cors'
 gem 'rails', '~> 6.0.0'
 gem 'sidekiq'
 
