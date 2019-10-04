@@ -26,7 +26,7 @@ module Api::V1
     def show
       if @link
         increment_link_view
-        json_response(@link)
+        redirect_to(@link.url)
       else
         json_response({ link: 'Invalid url', status: 404 })
       end

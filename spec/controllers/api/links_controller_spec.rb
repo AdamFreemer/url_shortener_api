@@ -4,10 +4,9 @@ RSpec.describe Api::V1::LinksController, type: :controller do
   describe 'GET #show' do
     let(:link) { Link.create(url: 'https://www.apple.com', slug: 'ABC123') }
 
-    it 'returns the expected record' do
+    it 'redirects to the correct url' do
       get :show, params: { id: link.slug }
-      
-      expect(JSON.parse(response.body)['url']).to eq(Link.first.url)
+      expect(link).to redirect_to(link.url)
     end
   end
 
