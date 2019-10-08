@@ -14,26 +14,26 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2019-10-07T23:35:36-04:00">2019-10-07T23:35:36-04:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2019-10-08T00:12:03-04:00">2019-10-08T00:12:03-04:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">95.45%</span></span>
+    (<span class="covered_percent"><span class="green">95.52%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.36
+         1.42
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>26</b> files in total.
-    <b>198</b> relevant lines. 
-    <span class="green"><b>189</b> lines covered</span> and
+    <b>201</b> relevant lines. 
+    <span class="green"><b>192</b> lines covered</span> and
     <span class="red"><b>9</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -103,11 +103,11 @@
       <tr>
         <td class="strong"><a href="#e0175d5bbcd19a7a897a42e851df806ad0b63466" class="src_link" title="app/models/link.rb">app/models/link.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>30</td>
-        <td>16</td>
-        <td>16</td>
+        <td>35</td>
+        <td>19</td>
+        <td>19</td>
         <td>0</td>
-        <td>3.9</td>
+        <td>4.1</td>
       </tr>
       
       <tr>
@@ -960,8 +960,8 @@
     <h3>app/models/link.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>16</b> relevant lines. 
-      <span class="green"><b>16</b> lines covered</span> and
+      <b>19</b> relevant lines. 
+      <span class="green"><b>19</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -975,175 +975,205 @@
           <code class="ruby">class Link &lt; ApplicationRecord</code>
         </li>
       
-        <li class="covered" data-hits="22" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before_save :default_values</code>
+        </li>
+      
+        <li class="covered" data-hits="22" data-linenumber="3">
           <span class="hits">22</span>
           
           <code class="ruby">  default_scope { order(views: :desc).limit(100) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="never" data-hits="" data-linenumber="4">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.generate_slug</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby">    # The conditional below is to account for the flaw in the log statement, </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="never" data-hits="" data-linenumber="7">
           
           
           <code class="ruby">    # when the link count is below 2 in the database.</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="7">
+        <li class="covered" data-hits="4" data-linenumber="8">
           <span class="hits">4</span>
           
           <code class="ruby">    digits = Link.count &gt; 1 ? Math.log(Link.count, 66).ceil : 1</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="8">
+        <li class="covered" data-hits="4" data-linenumber="9">
           <span class="hits">4</span>
           
           <code class="ruby">    self.slug_characters(digits)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="10">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="never" data-hits="" data-linenumber="11">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.slug_characters(slug_digits)</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="12">
+        <li class="covered" data-hits="4" data-linenumber="13">
           <span class="hits">4</span>
           
           <code class="ruby">    alphanumcase = [(&#39;a&#39;..&#39;z&#39;), (&#39;A&#39;..&#39;Z&#39;), (&#39;0&#39;..&#39;9&#39;)].map(&amp;:to_a).flatten</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="13">
+        <li class="covered" data-hits="4" data-linenumber="14">
           <span class="hits">4</span>
           
           <code class="ruby">    unreserved = [&#39;-&#39;, &#39;_&#39;, &#39;.&#39;, &#39;~&#39;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="never" data-hits="" data-linenumber="15">
           
           
           <code class="ruby">    # unreserved = the balance of the RFC 3986 unreserved character set</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="15">
+        <li class="covered" data-hits="4" data-linenumber="16">
           <span class="hits">4</span>
           
           <code class="ruby">    characters = [alphanumcase, unreserved].map(&amp;:to_a).flatten</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="16">
+        <li class="covered" data-hits="8" data-linenumber="17">
           <span class="hits">8</span>
           
           <code class="ruby">    (0...slug_digits).map { characters[rand(characters.length)] }.join</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="19">
+        <li class="covered" data-hits="1" data-linenumber="20">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.index_slug</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="20">
+        <li class="covered" data-hits="2" data-linenumber="21">
           <span class="hits">2</span>
           
           <code class="ruby">    return unless ActiveRecord::Base.connection.indexes(:links).first.name.include?(&#39;slug&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="21">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="22">
+        <li class="covered" data-hits="2" data-linenumber="23">
           <span class="hits">2</span>
           
           <code class="ruby">    ActiveRecord::Base.connection.indexes(:links).first.name  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="23">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="24">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="25">
+        <li class="covered" data-hits="1" data-linenumber="26">
           <span class="hits">1</span>
           
           <code class="ruby">  def self.index_url</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="26">
+        <li class="covered" data-hits="2" data-linenumber="27">
           <span class="hits">2</span>
           
           <code class="ruby">    return unless ActiveRecord::Base.connection.indexes(:links).second.name.include?(&#39;url&#39;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="never" data-hits="" data-linenumber="28">
           
           
           <code class="ruby">    </code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="28">
+        <li class="covered" data-hits="2" data-linenumber="29">
           <span class="hits">2</span>
           
           <code class="ruby">    ActiveRecord::Base.connection.indexes(:links).second.name  </code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="never" data-hits="" data-linenumber="30">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="32">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def default_values</code>
+        </li>
+      
+        <li class="covered" data-hits="13" data-linenumber="33">
+          <span class="hits">13</span>
+          
+          <code class="ruby">    self.views ||= 0</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="34">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="35">
           
           
           <code class="ruby">end</code>
@@ -1207,7 +1237,7 @@
         <li class="missed" data-hits="0" data-linenumber="7">
           
           
-          <code class="ruby">    &quot;http://localhost:3001/api/v1/links/#{self.slug}&quot;</code>
+          <code class="ruby">    &quot;http://localhost:3001/#{self.slug}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -1219,7 +1249,7 @@
         <li class="covered" data-hits="2" data-linenumber="9">
           <span class="hits">2</span>
           
-          <code class="ruby">    &quot;https://micro-url-api.herokuapp.com/api/v1/links/#{self.slug}&quot;</code>
+          <code class="ruby">    &quot;https://micro-url-api.herokuapp.com/#{self.slug}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">
@@ -1292,7 +1322,7 @@
         <li class="missed" data-hits="0" data-linenumber="7">
           
           
-          <code class="ruby">    &quot;http://localhost:3001/api/v1/links/#{self.slug}&quot;</code>
+          <code class="ruby">    &quot;http://localhost:3001/#{self.slug}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
@@ -1304,7 +1334,7 @@
         <li class="covered" data-hits="6" data-linenumber="9">
           <span class="hits">6</span>
           
-          <code class="ruby">    &quot;https://micro-url-api.herokuapp.com/api/v1/links/#{self.slug}&quot;</code>
+          <code class="ruby">    &quot;https://micro-url-api.herokuapp.com/#{self.slug}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="10">

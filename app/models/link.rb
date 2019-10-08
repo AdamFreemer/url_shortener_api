@@ -1,4 +1,5 @@
 class Link < ApplicationRecord
+  before_save :default_values
   default_scope { order(views: :desc).limit(100) }
 
   def self.generate_slug
@@ -26,5 +27,9 @@ class Link < ApplicationRecord
     return unless ActiveRecord::Base.connection.indexes(:links).second.name.include?('url')
     
     ActiveRecord::Base.connection.indexes(:links).second.name  
+  end
+
+  def default_values
+    self.views ||= 0
   end
 end

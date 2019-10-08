@@ -447,6 +447,7 @@
       ],
       "/Users/adam/Dropbox/Dev/url_shortener_api/app/models/link.rb": [
         1,
+        1,
         22,
         null,
         1,
@@ -474,6 +475,10 @@
         2,
         null,
         2,
+        null,
+        null,
+        1,
+        13,
         null,
         null
       ],
@@ -534,6 +539,6 @@
         null
       ]
     },
-    "timestamp": 1570505736
+    "timestamp": 1570507923
   }
 }
