@@ -300,6 +300,8 @@
         1,
         null,
         null,
+        null,
+        1,
         null
       ],
       "/Users/adam/Dropbox/Dev/url_shortener_api/app/models/application_record.rb": [
@@ -532,6 +534,6 @@
         null
       ]
     },
-    "timestamp": 1570161500
+    "timestamp": 1570505736
   }
 }
