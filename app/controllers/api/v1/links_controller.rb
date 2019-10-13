@@ -16,7 +16,7 @@ module Api::V1
         if e.message.include? link_index_slug
           retry
         elsif e.message.include? link_index_url
-          json_response({ message: 'This url already exists in the database', status: 404 })
+          json_response({ message: 'This url already exists in the database', status: 409 })
         else
           json_response({ message: 'An unknown error has occurred', status: 404 })
         end
