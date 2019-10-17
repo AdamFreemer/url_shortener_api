@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :top_urls, only: [:index]
       resources :links, only: [:create]
-      
+      resources :busy, only: [:index]
     end
   end
   get '/:id', to: 'api/v1/links#show'
