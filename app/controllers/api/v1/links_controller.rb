@@ -7,7 +7,7 @@ module Api::V1
 
     def create
       begin
-        @link.assign_attributes(url: params[:url], slug: Link.generate_slug)
+        @link.assign_attributes(url: url_formatter(params[:url]), slug: Link.generate_slug)
         if @link.save
           link_title_scraper(@link)
           create_json_response(@link) 

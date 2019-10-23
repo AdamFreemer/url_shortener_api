@@ -37,4 +37,15 @@ module Utility
   def link_title_scraper(link)
     LinkScraperWorker.perform_async(link.id)
   end
+
+  def url_formatter(raw_url)
+    sanitized_url = raw_url.gsub(/\s+/, "").downcase
+    final_url =
+      if sanitized_url =~ /http[s]?:\/\// 
+        sanitized_url
+      else
+        "http://#{sanitized_url}"
+      end
+    raw_url.include?('https') ? final_url.gsub(/http?:\/\// , 'https') : final_url
+  end
 end
